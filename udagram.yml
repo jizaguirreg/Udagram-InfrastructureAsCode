@@ -65,7 +65,7 @@ Resources:
               - 's3:PutObject*'
               - 's3:DeleteObject*'
               Resource:
-                - !Sub "arn:aws:s3:::any-bucket-name/*"
+                - !Sub "arn:aws:s3:::joaquinizaguirre2024-s3-udagram-nd9991-iac/*"
 
   WebAppInstanceProfile:
     Type: AWS::IAM::InstanceProfile
@@ -162,3 +162,11 @@ Resources:
       VpcId: 
         Fn::ImportValue:
           Fn::Sub: "${EnvironmentName}-VPCID"
+
+Outputs:
+  LoadBalancer:
+    Description: DNS for the LB
+    Value: 
+      !Join [ "", [ "http://", !GetAtt WebServerLB.DNSName ] ]
+    Export:
+      Name: !Sub "${EnvironmentName}-WEB-LB-DNS"
