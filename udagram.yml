@@ -88,6 +88,9 @@ Resources:
             sudo apt-get update -y
             sudo apt-get install nginx -y
             sudo service nginx start
+            cd /var/www/html
+            aws s3 cp s3://joaquinizaguirre2024-s3-udagram-nd9991-iac/index.html
+            sudo systemctl reload nginx
         ImageId: ami-0557a15b87f6559cf
         SecurityGroupIds:
           - !Ref WebServerSecurityGroup
