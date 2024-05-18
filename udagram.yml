@@ -167,6 +167,6 @@ Outputs:
   LoadBalancer:
     Description: DNS for the LB
     Value: 
-      !Join [ "", [ "http://", !GetAtt WebServerLB.DNSName ] ]
+      !Join [ "", [ "http://", !GetAtt WebAppLB.DNSName ] ]
     Export:
       Name: !Sub "${EnvironmentName}-WEB-LB-DNS"
