@@ -86,11 +86,15 @@ Resources:
           Fn::Base64: !Sub |
             #!/bin/bash
             sudo apt-get update -y
+            sudo apt-get install awscli -y
             sudo apt-get install nginx -y
             sudo service nginx start
-            cd /var/www/html
-            aws s3 cp s3://joaquinizaguirre2024-s3-udagram-nd9991-iac/index.html
-            sudo systemctl reload nginx
+            WEB_DIR="/var/www/html"
+            sudo rm -r $WEB_DIR/index.*
+            $WEB_DIR /var/www/html/
+            aws s3 cp s3://joaquinizaguirre2024-s3-udagram-nd9991-iac/index.html $WEB_DIR
+            sudo systemctl reload nginx.service
+            sudo service reload nginx
         ImageId: ami-0557a15b87f6559cf
         SecurityGroupIds:
           - !Ref WebServerSecurityGroup

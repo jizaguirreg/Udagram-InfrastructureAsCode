@@ -1,29 +1,26 @@
 #!/bin/bash
 # Joaquin Izaguirre
 #
+# Execute:
 # chmod +x scripts.sh
 #
 # Parameters
 #   $1: Execution mode. Valid values:
 #
-# Usage For Network:
+# 1. Usage For Network:
 #   ./scripts.sh create-network us-east-1 JoaquinIzaguirre-IaC-Udagram-Network network.yml network.json
 #   ./scripts.sh update-network us-east-1 JoaquinIzaguirre-IaC-Udagram-Network network.yml network.json
 #   ./scripts.sh delete-network us-east-1 JoaquinIzaguirre-IaC-Udagram-Network
 #
-# Usage For Udagram Infrastructure:
-#   ./scripts.sh create-udagram us-east-1 JoaquinIzaguirre-IaC-Udagram-Servers udagram.yml udagram.json
-#   ./scripts.sh update-udagram us-east-1 JoaquinIzaguirre-IaC-Udagram-Servers udagram.yml udagram.json
-#   ./scripts.sh delete-udagram us-east-1 JoaquinIzaguirre-IaC-Udagram-Servers udagram.yml udagram.json
-#
-# Usage For S3 Bucket:
+# 2. Usage For S3 Bucket:
 #   ./scripts.sh create-s3 us-east-1 joaquinizaguirre2024-s3-udagram-nd9991-iac s3.yml
 #   ./scripts.sh update-s3 us-east-1 joaquinizaguirre2024-s3-udagram-nd9991-iac s3.yml
 #   ./scripts.sh delete-s3 us-east-1 joaquinizaguirre2024-s3-udagram-nd9991-iac s3.yml
-
-
-
-#   $1: Execution mode. Valid values: deploy, delete, preview.
+#
+# 3. Usage For Udagram Infrastructure:
+#   ./scripts.sh create-udagram us-east-1 JoaquinIzaguirre-IaC-Udagram-Servers udagram.yml udagram.json
+#   ./scripts.sh update-udagram us-east-1 JoaquinIzaguirre-IaC-Udagram-Servers udagram.yml udagram.json
+#   ./scripts.sh delete-udagram us-east-1 JoaquinIzaguirre-IaC-Udagram-Servers udagram.yml udagram.json
 
 
 # Validate parameters
